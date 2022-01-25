@@ -195,7 +195,7 @@ fi
 if [ $show_help = true ]; then
     help=$(cd ${workspace_path}/packaging; bash -x ./package.sh $HELP_ARG)
     cat << USAGE
-Usage: docker run ... khos2ow/cloudstack-rpm-builder [DOCKER_OPTIONS] ... [PACKAGING_OPTIONS]...
+Usage: docker run ... SC Clouds/cloudstack-rpm-builder [DOCKER_OPTIONS] ... [PACKAGING_OPTIONS]...
 CloudStack RPM builder which acts as a wrapper for CloudStack package script. Optionally
 you can  specify remote git repository and ref to  be cloned and checked out and run the
 packaging script on in.
@@ -210,8 +210,8 @@ Other arguments:
    -h, --help                              Display this help message and exit
 
 Examples:
-   docker run ... khos2ow/cloudstack-rpm-builder [PACKAGING_OPTIONS] ...
-   docker run ... khos2ow/cloudstack-rpm-builder --git-remote https://path.to.repo/cloudstack.git --git-ref foo-branch [PACKAGING_OPTIONS] ...
+   docker run ... SC Clouds/cloudstack-rpm-builder [PACKAGING_OPTIONS] ...
+   docker run ... SC Clouds/cloudstack-rpm-builder --git-remote https://path.to.repo/cloudstack.git --git-ref foo-branch [PACKAGING_OPTIONS] ...
 
 --------
 

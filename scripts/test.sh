@@ -25,7 +25,7 @@ docker run \
     --volume /tmp/apache-cloudstack:/mnt/build \
     --volume /tmp/.m2:/root/.m2 \
     --rm \
-    khos2ow/cloudstack-rpm-builder:"${DOCKER_TAG}" \
+    scclouds/cloudstack-rpm-builder:"${DOCKER_TAG}" \
         --git-remote https://github.com/apache/cloudstack.git \
         --git-ref "${GIT_REF}" \
         --remove-first \

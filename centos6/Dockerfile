@@ -16,7 +16,7 @@
 # under the License.
 
 FROM centos:6
-LABEL maintainer="Khosrow Moossavi <me@khosrow.io> (@khos2ow)"
+LABEL maintainer="SC Clouds <contato@scclouds.com.br> (@scclouds)"
 
 RUN \
     yum clean metadata && \

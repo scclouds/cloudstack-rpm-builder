@@ -17,7 +17,7 @@
 
 # Project variables
 PROJECT_NAME  := cloudstack-rpm-builder
-PROJECT_OWNER := khos2ow
+PROJECT_OWNER := scclouds
 DESCRIPTION   := Docker images for building Apache CloudStack RPM packages
 PROJECT_URL   := https://github.com/$(PROJECT_OWNER)/$(PROJECT_NAME)
 LICENSE       := Apache-2.0
