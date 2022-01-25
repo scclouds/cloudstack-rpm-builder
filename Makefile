@@ -35,17 +35,17 @@ all: centos6 centos7-jdk8 centos7-jdk11
 .PHONY: centos6
 centos6: ## Build centos6 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag, centos6)
+	$(call build_tag,centos6)
 
 .PHONY: centos7-jdk8
 centos7-jdk8: ## Build centos7-jdk8 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag, centos7-jdk8)
+	$(call build_tag,centos7-jdk8)
 
 .PHONY: centos7-jdk11
 centos7-jdk11: ## Build centos7-jdk11 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag, centos7-jdk11)
+	$(call build_tag,centos7-jdk11)
 
 .PHONY: push
 push: DOCKER_TAG ?=
