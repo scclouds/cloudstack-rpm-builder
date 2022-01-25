@@ -31,8 +31,8 @@ project.
 
 ## Supported tags and respective `Dockerfile` links
 
-- [`latest`, `latest-jdk8`, `centos7`, `centos7-jdk8`(centos7/Dockerfile.jdk8)][centos7-dockerfile]
-- [`latest-jdk11`, `centos7-jdk11` (centos7/Dockerfile.jdk11)][latest-jdk11-dockerfile]
+- [`centos7-jdk8`(centos7/Dockerfile.jdk8)][centos7-jdk8-dockerfile]
+- [`centos7-jdk11`(centos7/Dockerfile.jdk11)][centos7-jdk11-dockerfile]
 - [`centos6` (centos6/Dockerfile)][centos6-dockerfile] [EOL - not supported anymore]
 
 ## Packages installed in container

@@ -39,11 +39,6 @@ centos6: ## Build centos6 image
 	@ $(MAKE) --no-print-directory log-$@
 	$(call build_tag,centos6,centos6,Dockerfile)
 
-.PHONY: centos7
-centos7: ## Build centos7 image
-	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,centos7,centos7,Dockerfile.jdk8)
-
 .PHONY: centos7-jdk8
 centos7-jdk8: ## Build centos7-jdk8 image
 	@ $(MAKE) --no-print-directory log-$@
@@ -53,21 +48,6 @@ centos7-jdk8: ## Build centos7-jdk8 image
 centos7-jdk11: ## Build centos7-jdk11 image
 	@ $(MAKE) --no-print-directory log-$@
 	$(call build_tag,centos7-jdk11,centos7,Dockerfile.jdk11)
-
-.PHONY: latest
-latest: ## Build latest image
-	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,latest,centos7,Dockerfile.jdk8)
-
-.PHONY: latest-jdk8
-latest-jdk8: ## Build latest-jdk8 image
-	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,latest-jdk8,centos7,Dockerfile.jdk8)
-
-.PHONY: latest-jdk11
-latest-jdk11: ## Build latest-jdk11 image
-	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,latest-jdk11,centos7,Dockerfile.jdk11)
 
 .PHONY: push
 push: DOCKER_TAG ?=
