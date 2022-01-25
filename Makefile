@@ -25,29 +25,27 @@ LICENSE       := Apache-2.0
 # Build docker tag based on provided info
 #
 # $1: tag_name
-# $2: directory_name
-# $3: dockerfile_name
 define build_tag
-	docker build --pull --tag $(PROJECT_OWNER)/$(PROJECT_NAME):$(1) --file $(2)/$(3) $(2)
+	docker build --pull --tag $(PROJECT_OWNER)/$(PROJECT_NAME):$(1) --file $(1)/Dockerfile $(1)
 endef
 
 .PHONY: all
-all: centos6 centos7 centos7-jdk8 centos7-jdk11 latest latest-jdk8 latest-jdk11
+all: centos6 centos7-jdk8 centos7-jdk11
 
 .PHONY: centos6
 centos6: ## Build centos6 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,centos6,centos6,Dockerfile)
+	$(call build_tag, centos6)
 
 .PHONY: centos7-jdk8
 centos7-jdk8: ## Build centos7-jdk8 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,centos7-jdk8,centos7,Dockerfile.jdk8)
+	$(call build_tag, centos7-jdk8)
 
 .PHONY: centos7-jdk11
 centos7-jdk11: ## Build centos7-jdk11 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,centos7-jdk11,centos7,Dockerfile.jdk11)
+	$(call build_tag, centos7-jdk11)
 
 .PHONY: push
 push: DOCKER_TAG ?=
