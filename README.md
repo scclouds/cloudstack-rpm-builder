@@ -1,8 +1,8 @@
 # CloudStack RPM Package builder using Docker
 
-[![Build Status](https://github.com/khos2ow/cloudstack-rpm-builder/workflows/ci/badge.svg)](https://github.com/khos2ow/cloudstack-rpm-builder/actions)
-[![Docker Pulls](https://img.shields.io/docker/pulls/khos2ow/cloudstack-rpm-builder.svg)](https://store.docker.com/community/images/khos2ow/cloudstack-rpm-builder)
-[![license](https://img.shields.io/github/license/khos2ow/cloudstack-rpm-builder.svg)](https://github.com/khos2ow/cloudstack-rpm-builder/blob/master/LICENSE)
+[![Build Status](https://github.com/scclouds/cloudstack-rpm-builder/workflows/ci/badge.svg)](https://github.com/scclouds/cloudstack-rpm-builder/actions)
+[![Docker Pulls](https://img.shields.io/docker/pulls/scclouds/cloudstack-rpm-builder.svg)](https://store.docker.com/community/images/scclouds/cloudstack-rpm-builder)
+[![license](https://img.shields.io/github/license/scclouds/cloudstack-rpm-builder.svg)](https://github.com/scclouds/cloudstack-rpm-builder/blob/master/LICENSE)
 
 Docker images for building Apache CloudStack RPM packages.
 
@@ -62,7 +62,7 @@ Let's assume we want to build packages for CentOS 7 on CentOS 7. We pull that
 image first:
 
 ```bash
-docker pull khos2ow/cloudstack-rpm-builder:centos7-jdk11
+docker pull scclouds/cloudstack-rpm-builder:centos7-jdk11
 ```
 
 You can replace `centos7-jdk11` tag by [one of the other tags].
@@ -92,7 +92,7 @@ always expects the `cloudstack` code exists in `/mnt/build` path.)
 ```bash
 docker run \
     -v /tmp:/mnt/build \
-    khos2ow/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
+    scclouds/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
 ```
 
 Or if your local cloudstack folder has other name, you need to map it to
@@ -101,7 +101,7 @@ Or if your local cloudstack folder has other name, you need to map it to
 ```bash
 docker run \
     -v /tmp/cloudstack-custom-name:/mnt/build/cloudstack \
-    khos2ow/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
+    scclouds/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
 ```
 
 After the build has finished the `.rpm` packages are available in
@@ -125,7 +125,7 @@ flag) in `/mnt/build/cloudstack` inside the container and can be accessed from
 ```bash
 docker run \
     -v /tmp:/mnt/build \
-    khos2ow/cloudstack-rpm-builder:centos7-jdk11 \
+    scclouds/cloudstack-rpm-builder:centos7-jdk11 \
         --git-remote https://github.com/apache/cloudstack.git \
         --git-ref master \
         --distribution centos7 [ARGS...]
@@ -155,7 +155,7 @@ it run faster.
 docker run \
     -v /tmp:/mnt/build \
     -v ~/.m2:/root/.m2 \
-    khos2ow/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
+    scclouds/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
 ```
 
 ### Adjust host owner permission
@@ -175,7 +175,7 @@ docker run \
     -v /tmp:/mnt/build \
     -e "USER_ID=$(id -u)" \
     -e "USER_GID=$(id -g)" \
-    khos2ow/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
+    scclouds/cloudstack-rpm-builder:centos7-jdk11 --distribution centos7 [ARGS...]
 ```
 
 ## Builder help
@@ -185,7 +185,7 @@ To see all the available options you can pass to `docker run ...` command:
 ```bash
 docker run \
     -v /tmp:/mnt/build \
-    khos2ow/cloudstack-rpm-builder:centos7-jdk11 --help
+    scclouds/cloudstack-rpm-builder:centos7-jdk11 --help
 ```
 
 ## License
@@ -193,10 +193,10 @@ docker run \
 Licensed under [Apache License version 2.0]. Please see the [LICENSE] file
 included in the root directory of the source tree for extended license details.
 
-[centos7-dockerfile]: https://github.com/khos2ow/cloudstack-rpm-builder/blob/master/centos7/Dockerfile.jdk8
-[latest-jdk11-dockerfile]: https://github.com/khos2ow/cloudstack-rpm-builder/blob/master/centos7/Dockerfile.jdk11
-[centos6-dockerfile]: https://github.com/khos2ow/cloudstack-rpm-builder/blob/master/centos6/Dockerfile
+[centos7-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos7/Dockerfile.jdk8
+[latest-jdk11-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos7/Dockerfile.jdk11
+[centos6-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos6/Dockerfile
 [one of the other tags]: #supported-tags-and-respective-dockerfile-links
 [https://github.com/apache/cloudstack]: https://github.com/apache/cloudstack
 [Apache License version 2.0]: http://www.apache.org/licenses/LICENSE-2.0
-[LICENSE]: https://github.com/khos2ow/cloudstack-rpm-builder/blob/master/LICENSE
+[LICENSE]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/LICENSE
