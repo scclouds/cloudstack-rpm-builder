@@ -1,3 +1,5 @@
+**Note: As the official repository seems unattended, we will continue the efforts in this one.**
+
 # CloudStack RPM Package builder using Docker
 
 [![Build Status](https://github.com/scclouds/cloudstack-rpm-builder/workflows/ci/badge.svg)](https://github.com/scclouds/cloudstack-rpm-builder/actions)
