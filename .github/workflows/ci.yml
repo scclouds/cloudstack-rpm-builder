@@ -47,7 +47,7 @@ jobs:
 
       - name: Test centos7-jdk11
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh centos7-jdk11 refs/heads/4.15 "--distribution centos7"
+        run: ./scripts/test.sh centos7-jdk11 refs/heads/4.16 "--distribution centos7"
 
       - name: Login to Docker
         uses: docker/login-action@v1
@@ -72,7 +72,7 @@ jobs:
 
       - name: Test centos7-jdk11-gcc9.3
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh centos7-jdk11-gcc9.3 refs/heads/4.15 "--distribution centos7"
+        run: ./scripts/test.sh centos7-jdk11-gcc9.3 refs/heads/4.16 "--distribution centos7"
 
       - name: Login to Docker
         uses: docker/login-action@v1
