@@ -236,6 +236,10 @@ function adjust_owner() {
 
     echo -e "\e[0;32mpackaging CloudStack RPM packages ...\e[0m"
 
+    # Export paths for GCC 9.3
+    export PATH="/usr/local/bin:$PATH"
+    export LD_LIBRARY_PATH="/usr/local/lib64:$LD_LIBRARY_PATH"
+
     # Solve issue with Maven build on GH Action (https://stackoverflow.com/questions/64359222/failed-to-execute-goal-maven-antrun-plugin-connection-timed-out-on-github-acti)
     export FLAGS="$FLAGS -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
 

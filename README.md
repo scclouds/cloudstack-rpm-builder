@@ -31,6 +31,7 @@ project.
 
 ## Supported tags and respective `Dockerfile` links
 
+- [`centos7-jdk11-gcc9.3`(centos7-jdk11-gcc9.3/Dockerfile)][centos7-jdk11-gcc9.3-dockerfile]
 - [`centos7-jdk11`(centos7-jdk11/Dockerfile)][centos7-jdk11-dockerfile]
 - [`centos7-jdk8`(centos7-jdk8/Dockerfile)][centos7-jdk8-dockerfile]
 - [`centos6` (centos6/Dockerfile)][centos6-dockerfile] [EOL - not supported anymore]
@@ -195,6 +196,7 @@ docker run \
 Licensed under [Apache License version 2.0]. Please see the [LICENSE] file
 included in the root directory of the source tree for extended license details.
 
+[centos7-jdk11-gcc9.3-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos7-jdk11-gcc9.3/Dockerfile
 [centos7-jdk11-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos7-jdk11/Dockerfile
 [centos7-jdk8-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos7-jdk8/Dockerfile
 [centos6-dockerfile]: https://github.com/scclouds/cloudstack-rpm-builder/blob/master/centos6/Dockerfile
