@@ -236,6 +236,8 @@ function adjust_owner() {
 
     echo -e "\e[0;32mpackaging CloudStack RPM packages ...\e[0m"
 
+    export FLAGS = "$FLAGS -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
+
     # do the packaging
     bash -x ./package.sh $@ && {
         # create RPMs
