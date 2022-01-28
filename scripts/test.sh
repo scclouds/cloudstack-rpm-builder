@@ -23,7 +23,6 @@ DOCKER_PARAM=$3
 
 docker run \
     --volume /tmp/apache-cloudstack:/mnt/build \
-    --volume /tmp/.m2:/root/.m2 \
     --rm \
     scclouds/cloudstack-rpm-builder:"${DOCKER_TAG}" \
         --git-remote https://github.com/apache/cloudstack.git \
