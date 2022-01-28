@@ -240,6 +240,9 @@ function adjust_owner() {
     export PATH="/usr/local/bin:$PATH"
     export LD_LIBRARY_PATH="/usr/local/lib64:$LD_LIBRARY_PATH"
 
+    # Maven force update
+    export FLAGS="$FLAGS -U"
+
     # do the packaging
     bash -x ./package.sh $@ && {
         # create RPMs
