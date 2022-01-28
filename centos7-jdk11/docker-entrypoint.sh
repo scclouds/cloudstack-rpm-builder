@@ -237,7 +237,7 @@ function adjust_owner() {
     echo -e "\e[0;32mpackaging CloudStack RPM packages ...\e[0m"
 
     # Maven force update
-    export FLAGS="$FLAGS -U"
+    export FLAGS="$FLAGS -X"
 
     # do the packaging
     bash -x ./package.sh $@ && {
