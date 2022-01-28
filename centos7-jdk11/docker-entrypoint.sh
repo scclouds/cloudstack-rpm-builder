@@ -236,6 +236,7 @@ function adjust_owner() {
 
     echo -e "\e[0;32mpackaging CloudStack RPM packages ...\e[0m"
 
+    # Solve issue with Maven build on GH Action (https://stackoverflow.com/questions/64359222/failed-to-execute-goal-maven-antrun-plugin-connection-timed-out-on-github-acti)
     export FLAGS="$FLAGS -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
 
     # do the packaging
