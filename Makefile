@@ -52,10 +52,10 @@ centos7-jdk11-gcc9.3: ## Build centos7-jdk11-gcc9.3 image
 	@ $(MAKE) --no-print-directory log-$@
 	$(call build_tag,centos7-jdk11-gcc9.3)
 
-.PHONY: oracle-linux-jdk11
-oracle-linux-jdk11: ## Build oracle-linux-jdk11 image
+.PHONY: oracle-linux9-jdk11
+oracle-linux9-jdk11: ## Build oracle-linux9-jdk11 image
 	@ $(MAKE) --no-print-directory log-$@
-	$(call build_tag,oracle-linux-jdk11)
+	$(call build_tag,oracle-linux9-jdk11)
 
 .PHONY: push
 push: DOCKER_TAG ?=
