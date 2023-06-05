@@ -85,19 +85,19 @@ jobs:
         if: contains(github.ref, 'refs/heads/master') && env.REGISTRY_USERNAME != ''
         run: DOCKER_TAG=centos7-jdk11-gcc9.3 make push
 
-  oracle-linux-jdk11:
+  oracle-linux9-jdk11:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build oracle-linux-jdk11
-        run: make oracle-linux-jdk11
+      - name: Build oracle-linux9-jdk11
+        run: make oracle-linux9-jdk11
 
-      - name: Test oracle-linux-jdk11
+      - name: Test oracle-linux9-jdk11
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh oracle-linux-jdk11 refs/heads/4.16 "--distribution el9"
+        run: ./scripts/test.sh oracle-linux9-jdk11 refs/heads/4.16 "--distribution el9"
 
       - name: Login to Docker
         uses: docker/login-action@v1
@@ -106,6 +106,6 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - name: Push oracle-linux-jdk11
+      - name: Push oracle-linux9-jdk11
         if: contains(github.ref, 'refs/heads/master') && env.REGISTRY_USERNAME != ''
-        run: DOCKER_TAG=oracle-linux-jdk11 make push
+        run: DOCKER_TAG=oracle-linux9-jdk11 make push
