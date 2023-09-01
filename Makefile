@@ -52,6 +52,11 @@ centos7-jdk11-gcc9.3: ## Build centos7-jdk11-gcc9.3 image
 	@ $(MAKE) --no-print-directory log-$@
 	$(call build_tag,centos7-jdk11-gcc9.3)
 
+.PHONY: oracle-linux9-jdk11
+oracle-linux9-jdk11: ## Build oracle-linux9-jdk11 image
+	@ $(MAKE) --no-print-directory log-$@
+	$(call build_tag,oracle-linux9-jdk11)
+
 .PHONY: el8-jdk11
 el8-jdk11: ## Build el8-jdk11 image
 	@ $(MAKE) --no-print-directory log-$@
