@@ -109,3 +109,28 @@ jobs:
       - name: Push oracle-linux9-jdk11
         if: contains(github.ref, 'refs/heads/master') && env.REGISTRY_USERNAME != ''
         run: DOCKER_TAG=oracle-linux9-jdk11 make push
+
+  el8-jdk11:
+    runs-on: almalinux-8
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: el8-jdk11
+        run: make el8-jdk11
+
+      - name: Test el8-jdk11
+        if: "!contains(github.ref, 'refs/heads/master')"
+        run: ./scripts/test.sh el8-jdk11 refs/heads/4.18 "--distribution centos8"
+
+      - name: Login to Docker
+        uses: docker/login-action@v1
+        if: contains(github.ref, 'refs/heads/master') && env.REGISTRY_USERNAME != ''
+        with:
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Push el8-jdk11
+        if: contains(github.ref, 'refs/heads/master') && env.REGISTRY_USERNAME != ''
+        run: DOCKER_TAG=el8-jdk11 make push

@@ -57,6 +57,11 @@ oracle-linux9-jdk11: ## Build oracle-linux9-jdk11 image
 	@ $(MAKE) --no-print-directory log-$@
 	$(call build_tag,oracle-linux9-jdk11)
 
+.PHONY: el8-jdk11
+el8-jdk11: ## Build el8-jdk11 image
+	@ $(MAKE) --no-print-directory log-$@
+	$(call build_tag,el8-jdk11)
+
 .PHONY: push
 push: DOCKER_TAG ?=
 push: ## Push image
